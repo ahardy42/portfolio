@@ -1,5 +1,6 @@
 ---
 // Header component with responsive navigation
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="bg-[var(--color-background)] border-b border-[var(--color-surface)]">
@@ -7,7 +8,7 @@
     <div class="flex justify-between items-center h-16">
       <!-- Logo/Brand -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-[var(--color-text-primary)] text-xl font-bold hover:text-[var(--color-text-secondary)] transition-colors">
+        <a href="/" class="text-[var(--color-text-primary)] text-xl font-bold hover:text-[var(--color-primary)] transition-colors">
           Ultimate Question Coding
         </a>
       </div>
@@ -15,10 +16,24 @@
       <!-- Desktop Navigation -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
-          <a href="/projects" class="text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] px-3 py-2 rounded-md text-sm font-medium transition-colors">
+          <a 
+            href="/projects" 
+            class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+              currentPath === '/projects' 
+                ? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full' 
+                : 'text-[var(--color-text-primary)] hover:after:w-full'
+            } after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+          >
             Projects
           </a>
-          <a href="/contact" class="text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] px-3 py-2 rounded-md text-sm font-medium transition-colors">
+          <a 
+            href="/contact" 
+            class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+              currentPath === '/contact' 
+                ? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full' 
+                : 'text-[var(--color-text-primary)] hover:after:w-full'
+            } after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+          >
             Contact
           </a>
         </div>
@@ -48,10 +63,24 @@
     <!-- Mobile Navigation Menu -->
     <div class="md:hidden mobile-menu hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[var(--color-surface)]">
-        <a href="/projects" class="text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] block px-3 py-2 rounded-md text-base font-medium transition-colors">
+        <a 
+          href="/projects" 
+          class={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group ${
+            currentPath === '/projects' 
+              ? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full' 
+              : 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
+          } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+        >
           Projects
         </a>
-        <a href="/contact" class="text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] block px-3 py-2 rounded-md text-base font-medium transition-colors">
+        <a 
+          href="/contact" 
+          class={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group ${
+            currentPath === '/contact' 
+              ? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full' 
+              : 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
+          } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+        >
           Contact
         </a>
       </div>
