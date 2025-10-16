@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Font Family */
+:root {
+  --font-family-primary: 'Nunito', sans-serif;
+}
+
 /* Color Palette Variables */
 :root {
   /* Primary Colors */
