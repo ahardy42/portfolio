@@ -1,11 +1,63 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from '../components/Card.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<div class="container mx-auto px-4 py-8">
+		<div class="max-w-4xl mx-auto">
+			<!-- Company Blurb -->
+			<div class="mb-12">
+				<p class="text-lg text-[var(--color-text-primary)] leading-relaxed">
+					Ultimate Question Coding LLC is a software development house based out of Waterbury VT that specializes in custom app development for clients. We have extensive experience creating web-apps, static sites, cross-platform apps and smart TV applications.
+				</p>
+			</div>
+
+			<!-- Project Cards Section -->
+			<div class="mb-8">
+				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">Production Projects</h2>
+				<div class="grid gap-6 md:grid-cols-2">
+					<Card href="/projects#tezlab-app">
+						<Fragment slot="title">TezLab App</Fragment>
+						<Fragment slot="description">
+							A cross-platform app that offers insights, social engagement and cost and energy tracking for supported electric vehicles. Built using React Native with a SwiftUI built widget.
+						</Fragment>
+						<Fragment slot="link">View Project →</Fragment>
+					</Card>
+
+					<Card href="/projects#tezlab-website">
+						<Fragment slot="title">TezLab Website</Fragment>
+						<Fragment slot="description">
+							Built using a combination of Ruby on Rails and React, this is a responsive, modern marketing website as well as a public charger map which sources review data from the TezLab user base.
+						</Fragment>
+						<Fragment slot="link">View Project →</Fragment>
+					</Card>
+
+					<Card href="/projects#watchmyriv">
+						<Fragment slot="title">WatchMyRiv Marketing Website</Fragment>
+						<Fragment slot="description">
+							This is a static site built using Astro that advertises an iOS watch app for controlling various functionalities of your Rivian vehicle.
+						</Fragment>
+						<Fragment slot="link">View Project →</Fragment>
+					</Card>
+
+					<Card href="/projects#perplexity">
+						<Fragment slot="title">Perplexity</Fragment>
+						<Fragment slot="description">
+							This is a Samsung smart TV app built using Tizen / Svelte which integrates the system microphone into a voice-to-text search using Perplexity's LLM to search the web from the comfort of your living room.
+						</Fragment>
+						<Fragment slot="link">View Project →</Fragment>
+					</Card>
+
+					<Card href="/projects#tezlab-ai">
+						<Fragment slot="title">TezLabAI</Fragment>
+						<Fragment slot="description">
+							This app incorporates a MCP server using Next.js to allow a TezLab user to ask questions about their vehicle using real data from their everyday driving and charging habits.
+						</Fragment>
+						<Fragment slot="link">View Project →</Fragment>
+					</Card>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>
