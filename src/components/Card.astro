@@ -1,0 +1,43 @@
+---
+const { href, onclick } = Astro.props;
+const isLink = href !== undefined;
+const isButton = onclick !== undefined;
+---
+
+{isLink ? (
+    <a href={href} class="block bg-[var(--color-surface)] rounded-lg p-4 hover:bg-[var(--color-base)] focus:bg-[var(--color-base)] hover:outline hover:outline-2 hover:outline-[var(--color-surface)] focus:outline focus:outline-2 focus:outline-[var(--color-surface)] transition-all duration-300 focus:outline-offset-2">
+        <h2 class="text-[var(--color-text-primary)] text-xl font-bold mb-2">
+            <slot name="title" />
+        </h2>
+        <p class="text-[var(--color-text-primary)]">
+            <slot name="description" />
+        </p>
+        <span class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full">
+            <slot name="link" />
+        </span>
+    </a>
+) : isButton ? (
+    <button onclick={onclick} class="w-full text-left bg-[var(--color-surface)] rounded-lg p-4 hover:bg-[var(--color-base)] focus:bg-[var(--color-base)] hover:outline hover:outline-2 hover:outline-[var(--color-surface)] focus:outline focus:outline-2 focus:outline-[var(--color-surface)] transition-all duration-300 focus:outline-offset-2">
+        <h2 class="text-[var(--color-text-primary)] text-xl font-bold mb-2">
+            <slot name="title" />
+        </h2>
+        <p class="text-[var(--color-text-primary)]">
+            <slot name="description" />
+        </p>
+        <span class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full">
+            <slot name="link" />
+        </span>
+    </button>
+) : (
+    <div class="bg-[var(--color-surface)] rounded-lg p-4">
+        <h2 class="text-[var(--color-text-primary)] text-xl font-bold mb-2">
+            <slot name="title" />
+        </h2>
+        <p class="text-[var(--color-text-primary)]">
+            <slot name="description" />
+        </p>
+        <span class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full">
+            <slot name="link" />
+        </span>
+    </div>
+)}
