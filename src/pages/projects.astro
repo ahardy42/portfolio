@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import tezlab_website from '../assets/tezlab_website.png';
+import tezlab_app from '../assets/tezlab_app.png';
+import watchmyriv from '../assets/watch_my_riv.png';
+import perplexity from '../assets/perplexity.png';
+import tezlab_ai from '../assets/tezlab_ai.png';
 ---
 
 <Layout>
@@ -10,15 +16,19 @@ import Layout from '../layouts/Layout.astro';
 			<!-- TezLab App Section -->
 			<section id="tezlab-app" class="mb-12">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">TezLab App</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6">
-					<p class="text-[var(--color-text-primary)] mb-4">
-						A cross-platform app that offers insights, social engagement and cost and energy tracking for supported electric vehicles. Built using React Native with a SwiftUI built widget.
-					</p>
-					<div class="flex flex-wrap gap-2">
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">React Native</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">SwiftUI</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Cross-platform</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Electric Vehicles</span>
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+					<div class="flex-1">
+						<p class="text-[var(--color-text-primary)] mb-4">
+							A cross-platform app that offers insights, social engagement and cost and energy tracking for supported electric vehicles. Built using React Native with a SwiftUI built widget.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">React Native</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">SwiftUI</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Cross-platform</span>
+						</div>
+					</div>
+					<div class="flex-1">
+						<Hero image={tezlab_app} alt="TezLab App" />
 					</div>
 				</div>
 			</section>
@@ -26,15 +36,19 @@ import Layout from '../layouts/Layout.astro';
 			<!-- TezLab Website Section -->
 			<section id="tezlab-website" class="mb-12">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">TezLab Website</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6">
-					<p class="text-[var(--color-text-primary)] mb-4">
-						Built using a combination of Ruby on Rails and React, this is a responsive, modern marketing website as well as a public charger map which sources review data from the TezLab user base.
-					</p>
-					<div class="flex flex-wrap gap-2">
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Ruby on Rails</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">React</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Responsive Design</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Charger Map</span>
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+					<div class="flex-1">
+						<p class="text-[var(--color-text-primary)] mb-4">
+							Built using a combination of Ruby on Rails and React, this is a responsive, modern marketing website as well as a public charger map which sources review data from the TezLab user base.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Ruby on Rails</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">React</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Responsive Design</span>
+						</div>
+					</div>
+					<div class="flex-1">
+						<Hero image={tezlab_website} alt="TezLab Website" />
 					</div>
 				</div>
 			</section>
@@ -42,15 +56,18 @@ import Layout from '../layouts/Layout.astro';
 			<!-- WatchMyRiv Section -->
 			<section id="watchmyriv" class="mb-12">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">WatchMyRiv Marketing Website</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6">
-					<p class="text-[var(--color-text-primary)] mb-4">
-						This is a static site built using Astro that advertises an iOS watch app for controlling various functionalities of your Rivian vehicle.
-					</p>
-					<div class="flex flex-wrap gap-2">
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Astro</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Static Site</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">iOS Watch App</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Rivian</span>
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+					<div class="flex-1">
+						<p class="text-[var(--color-text-primary)] mb-4">
+							This is a static site built using Astro that advertises an iOS watch app for controlling various functionalities of your Rivian vehicle.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Astro</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Static Site</span>
+						</div>
+					</div>
+					<div class="flex-1">
+						<Hero image={watchmyriv} alt="WatchMyRiv" />
 					</div>
 				</div>
 			</section>
@@ -58,16 +75,21 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Perplexity Section -->
 			<section id="perplexity" class="mb-12">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">Perplexity</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6">
-					<p class="text-[var(--color-text-primary)] mb-4">
-						This is a Samsung smart TV app built using Tizen / Svelte which integrates the system microphone into a voice-to-text search using Perplexity's LLM to search the web from the comfort of your living room.
-					</p>
-					<div class="flex flex-wrap gap-2">
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Tizen</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Svelte</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Smart TV</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Voice-to-Text</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">LLM</span>
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+					<div class="flex-1">
+						<p class="text-[var(--color-text-primary)] mb-4">
+							This is a Samsung smart TV app built using Tizen / Svelte which integrates the system microphone into a voice-to-text search using Perplexity's LLM to search the web from the comfort of your living room.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Tizen</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Svelte</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Smart TV</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Voice-to-Text</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">LLM</span>
+						</div>
+					</div>
+					<div class="flex-1">
+						<Hero image={perplexity} alt="Perplexity" />
 					</div>
 				</div>
 			</section>
@@ -75,15 +97,19 @@ import Layout from '../layouts/Layout.astro';
 			<!-- TezLabAI Section -->
 			<section id="tezlab-ai" class="mb-12">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-4">TezLabAI</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6">
-					<p class="text-[var(--color-text-primary)] mb-4">
-						This app incorporates a MCP server using Next.js to allow a TezLab user to ask questions about their vehicle using real data from their everyday driving and charging habits.
-					</p>
-					<div class="flex flex-wrap gap-2">
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Next.js</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">MCP Server</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">AI Integration</span>
-						<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Vehicle Data</span>
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+					<div class="flex-1">
+						<p class="text-[var(--color-text-primary)] mb-4">
+							This app incorporates a MCP server using Next.js to allow a TezLab user to ask questions about their vehicle using real data from their everyday driving and charging habits.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Next.js</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">MCP Server</span>
+							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">AI Integration</span>
+						</div>
+					</div>
+					<div class="flex-1">
+						<Hero image={tezlab_ai} alt="TezLabAI" />
 					</div>
 				</div>
 			</section>
