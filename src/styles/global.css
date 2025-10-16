@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+/* Color Palette Variables */
+:root {
+  /* Primary Colors */
+  --color-base: #283618;
+  --color-card: #606c38;
+  --color-primary: #fefae0;
+  --color-secondary: #dda15e;
+  --color-highlight: #bc6c25;
+  
+  /* Semantic Color Mappings */
+  --color-background: var(--color-base);
+  --color-surface: var(--color-card);
+  --color-accent: var(--color-highlight);
+  
+  /* Text Colors */
+  --color-text-primary: var(--color-primary);
+  --color-text-secondary: var(--color-secondary);
+}
