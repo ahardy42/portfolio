@@ -1,41 +1,39 @@
-name: Deploy to GitHub Pages
+name: Deploy to Vercel
 
 on:
   # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
+# Allow this job to clone the repo and deploy to Vercel
 permissions:
   contents: read
-  pages: write
   id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          node-version: 21.3.0 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          node-version: '21.3.0'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          working-directory: ./
         env:
           RESEND_KEY: ${{ secrets.RESEND_KEY }}
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
