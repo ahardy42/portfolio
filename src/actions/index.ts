@@ -2,7 +2,7 @@ import { defineAction } from "astro:actions";
 import { z } from "astro:content";
 import { Resend } from "resend";
 
-const resend = new Resend(import.meta.env.RESEND_KEY);
+const resend = new Resend(import.meta.env.RESEND_KEY || import.meta.env.VERCEL_RESEND_KEY);
 
 export const server = {
     sendEmail: defineAction({

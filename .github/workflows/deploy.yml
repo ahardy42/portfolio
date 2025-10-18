@@ -66,7 +66,7 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
-          RESEND_KEY: ${{ secrets.RESEND_KEY }}
+          VERCEL_RESEND_KEY: ${{ secrets.VERCEL_RESEND_KEY }}
       
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
