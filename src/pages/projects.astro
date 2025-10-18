@@ -1,11 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import tezlab_website from '../assets/tezlab_website.png';
-import tezlab_app from '../assets/tezlab_app.png';
-import watchmyriv from '../assets/watch_my_riv.png';
-import perplexity from '../assets/perplexity.png';
-import tezlab_ai from '../assets/tezlab_ai.png';
 ---
 
 <Layout>
@@ -29,7 +24,7 @@ import tezlab_ai from '../assets/tezlab_ai.png';
 						<a href="https://apps.apple.com/us/app/tezlab-for-tesla-rivian/id1239581716" target="_blank" class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full">View Project →</a>
 					</div>
 					<div class="flex-1">
-						<Hero image={tezlab_app} alt="TezLab App" />
+						<Hero image={{src: '/tezlab_app.png'}} alt="TezLab App" />
 					</div>
 				</div>
 			</section>
@@ -50,7 +45,7 @@ import tezlab_ai from '../assets/tezlab_ai.png';
 						<a href="https://www.tezlabapp.com" target="_blank" class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full">View Project →</a>
 					</div>
 					<div class="flex-1">
-						<Hero image={tezlab_website} alt="TezLab Website" />
+						<Hero image={{src: '/tezlab_website.png'}} alt="TezLab Website" />
 					</div>
 				</div>
 			</section>
@@ -70,7 +65,7 @@ import tezlab_ai from '../assets/tezlab_ai.png';
 						<a href="https://www.watchmyrivian.com" target="_blank" class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full">View Project →</a>
 					</div>
 					<div class="flex-1">
-						<Hero image={watchmyriv} alt="WatchMyRiv" />
+						<Hero image={{src: '/watch_my_riv.png'}} alt="WatchMyRiv" />
 					</div>
 				</div>
 			</section>
@@ -92,7 +87,7 @@ import tezlab_ai from '../assets/tezlab_ai.png';
 						</div>
 					</div>
 					<div class="flex-1">
-						<Hero image={perplexity} alt="Perplexity" />
+						<Hero image={{src: '/perplexity.png'}} alt="Perplexity" />
 					</div>
 				</div>
 			</section>
@@ -149,7 +144,7 @@ import tezlab_ai from '../assets/tezlab_ai.png';
 						<a href="https://ai.tezlabapp.com" target="_blank" class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full">View Project →</a>
 					</div>
 					<div class="flex-1">
-						<Hero image={tezlab_ai} alt="TezLabAI" />
+						<Hero image={{src: '/tezlab_ai.png'}} alt="TezLabAI" />
 					</div>
 				</div>
 			</section>
