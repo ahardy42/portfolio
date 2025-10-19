@@ -23,3 +23,15 @@
   --color-text-primary: var(--color-primary);
   --color-text-secondary: var(--color-secondary);
 }
+
+/* Mobile safe area padding for footer */
+.footer-mobile-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 2rem);
+}
+
+/* Additional mobile-specific padding for Chrome address bar */
+@media (max-width: 768px) {
+  .footer-mobile-safe {
+    padding-bottom: max(env(safe-area-inset-bottom, 0px), 3rem);
+  }
+}
