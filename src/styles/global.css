@@ -32,20 +32,8 @@ html {
 body {
   background-color: var(--color-background);
   /* Extend background into safe areas */
-  padding-left: env(safe-area-inset-left, 0px);
-  padding-right: env(safe-area-inset-right, 0px);
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-
-/* Mobile safe area padding for footer */
-.footer-mobile-safe {
-  padding-bottom: max(env(safe-area-inset-bottom, 0px), 2rem);
-}
-
-/* Additional mobile-specific padding for Chrome address bar */
-@media (max-width: 768px) {
-  .footer-mobile-safe {
-    padding-bottom: max(env(safe-area-inset-bottom, 0px), 3rem);
-  }
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
