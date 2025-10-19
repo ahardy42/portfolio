@@ -17,6 +17,16 @@ const currentPath = Astro.url.pathname;
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
           <a 
+            href="/about" 
+            class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+              currentPath === '/about' 
+                ? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full' 
+                : 'text-[var(--color-text-primary)] hover:after:w-full'
+            } after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+          >
+            About
+          </a>
+          <a 
             href="/projects" 
             class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
               currentPath === '/projects' 

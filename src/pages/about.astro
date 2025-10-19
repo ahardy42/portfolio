@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import profile_1 from '../assets/profile_1.webp';
+---
+
+<Layout>
+	<div class="container mx-auto px-4 py-8 md:max-w-5xl">
+		<div class="max-w-4xl mx-auto">
+			
+			<!-- Content section with floating image on larger screens -->
+			<div>
+
+                <!-- Floating image for larger screens -->
+				<div class="hidden md:block float-right h-[40vw] w-[40vw] border-3 border-[var(--color-card)] rounded-full overflow-hidden ml-[2rem] mb-[2rem]">
+					<img src={profile_1.src} alt="Profile" class="w-full h-full object-cover" />
+				</div>
+
+                <!-- Header section with title and image side by side on md and smaller -->
+                <div class="flex flex-col justify-center md:flex-row md:items-start md:justify-center mb-8">
+                    <h1 class="text-center md:text-left text-3xl font-bold text-[var(--color-text-primary)] mb-4 md:mb-0 md:flex-1 md:mr-8">About Me</h1>
+                    <div class="h-[50vw] w-[50vw] mx-auto md:mx-0 mb-1 md:mb-0 border-3 border-[var(--color-card)] background-[var(--color-card)] rounded-full overflow-hidden flex-shrink-0 md:hidden">
+                        <img src={profile_1.src} alt="Profile" class="w-full h-full object-cover" />
+                    </div>
+                </div>				
+				
+				<!-- Text content with margin for floating image -->
+				<div>
+					<p class="text-lg text-[var(--color-text-primary)] leading-relaxed mb-4">
+						My name is Andy Hardy and I'm the founder of Ultimate Question Coding LLC.  I live in Waterbury VT with my wife Katie.
+					</p>
+                    <br />
+					<p class="text-lg text-[var(--color-text-primary)] leading-relaxed mb-4">
+						I'm a software developer with six years of experience building thoughtful, real-world technology — especially in IoT, mapping, and pragmatic applications of AI (the kind that solve problems, not just sell buzzwords). 
+					</p>
+                    <br />  
+					<p class="text-lg text-[var(--color-text-primary)] leading-relaxed mb-4">
+						Before software, I spent a decade as a chemist, with a ski-bum intermission out West. I've lived most of my life in New England, aside from a few years in Colorado and a brief Alaskan beginning. 
+					</p>
+                    <br />
+					<p class="text-lg text-[var(--color-text-primary)] leading-relaxed mb-4">
+						When I get stuck on a hard problem, I usually find the answer by riding or skiing through the woods — it's often the jolt of movement, not the keyboard, that knocks it loose.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
