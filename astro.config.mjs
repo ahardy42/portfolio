@@ -11,6 +11,10 @@ export default defineConfig({
     maxDuration: 8
   }),
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      host: true,
+      allowedHosts: ['ahardy42.ngrok.io']
+    }
   },
 });
