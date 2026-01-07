@@ -8,32 +8,39 @@ Ultimate Question Coding LLC is a software development house based in Waterbury,
 
 ## 🛠️ Tech Stack
 
-- **[Astro](https://astro.build/)** - Modern static site generator
+- **[Astro](https://astro.build/)** - Modern web framework with server-side rendering
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **TypeScript** - Type-safe JavaScript
+- **[Vercel](https://vercel.com/)** - Deployment platform
+- **[Resend](https://resend.com/)** - Email API for contact form submissions
 
 ## 📁 Project Structure
 
 ```
 /
+├── .github/
+│   └── workflows/
+│       └── deploy.yml    # Vercel deployment workflow
 ├── public/
 │   ├── CNAME
-│   └── favicon.svg
+│   ├── favicon.ico
+│   └── site.webmanifest
 ├── src/
-│   ├── assets/           # Images and static assets
+│   ├── actions/          # Server-side actions
+│   │   └── index.ts      # Contact form email handler
 │   ├── components/       # Reusable Astro components
 │   │   ├── Card.astro
+│   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── Hero.astro
 │   │   └── Welcome.astro
 │   ├── layouts/          # Page layouts
 │   │   └── Layout.astro
-│   ├── pages/            # Route pages
-│   │   ├── contact.astro
-│   │   ├── index.astro
-│   │   └── projects.astro
-│   └── styles/           # Global styles
-│       └── global.css
+│   └── pages/            # Route pages
+│       ├── about.astro
+│       ├── contact.astro
+│       ├── index.astro
+│       └── projects.astro
 ├── astro.config.mjs
 ├── package.json
 └── tsconfig.json
@@ -79,15 +86,54 @@ npm run dev
 
 ## 🎯 Features
 
-- **Responsive Design** - Optimized for all device sizes
+- **Responsive Design** - Optimized for all device sizes with mobile-first approach
 - **Modern UI** - Clean, professional design with Tailwind CSS
-- **Fast Performance** - Static site generation with Astro
+- **Server-Side Rendering** - Fast initial page loads with Astro SSR on Vercel
+- **Animated Mobile Menu** - Smooth navigation experience on mobile devices
+- **Contact Form** - Server-side email handling via Resend API
+- **About Page** - Team information and company background
 - **Project Showcase** - Highlighting our diverse portfolio including:
   - TezLab iOS & Android app
   - TezLab website
   - WatchMyRiv website
   - Perplexity Smart TV app
   - TezLabAI webapp
+
+## 🚀 Deployment
+
+This project deploys automatically to Vercel via GitHub Actions.
+
+### How It Works
+
+1. **Trigger**: Deployments are triggered on every push to the `main` branch, or manually via the GitHub Actions "workflow_dispatch" option
+2. **Build**: The GitHub Action installs dependencies, pulls Vercel environment info, and builds the project using the Vercel CLI
+3. **Deploy**: The pre-built artifacts are deployed to Vercel's production environment
+
+### Required Secrets
+
+The following secrets must be configured in your GitHub repository settings:
+
+| Secret | Description |
+| :----- | :---------- |
+| `VERCEL_TOKEN` | Vercel API token for authentication |
+| `ORG_ID` | Vercel organization ID |
+| `PROJECT_ID` | Vercel project ID |
+| `VERCEL_RESEND_KEY` | Resend API key for contact form emails |
+
+### Manual Deployment
+
+You can also deploy manually using the Vercel CLI:
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy to preview
+vercel
+
+# Deploy to production
+vercel --prod
+```
 
 ## 🛠️ Services
 
