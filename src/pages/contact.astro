@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import { actions } from 'astro:actions';
 
 const result = Astro.getActionResult(actions.sendEmail);
+const turnstileSiteKey = import.meta.env.TURNSTILE_SITE_KEY;
 ---
 
 <Layout>
@@ -69,6 +70,8 @@ const result = Astro.getActionResult(actions.sendEmail);
 					></textarea>
 				</div>
 				
+				<div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto"></div>
+
 				<div>
 					<button
 						type="submit"
@@ -81,3 +84,5 @@ const result = Astro.getActionResult(actions.sendEmail);
 		</div>
 	</div>
 </Layout>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

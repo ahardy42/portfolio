@@ -13,6 +13,7 @@ Ultimate Question Coding LLC is a software development house based in Waterbury,
 - **TypeScript** - Type-safe JavaScript
 - **[Vercel](https://vercel.com/)** - Deployment platform
 - **[Resend](https://resend.com/)** - Email API for contact form submissions
+- **[Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/)** - Privacy-focused captcha for spam protection
 
 ## 📁 Project Structure
 
@@ -90,7 +91,7 @@ npm run dev
 - **Modern UI** - Clean, professional design with Tailwind CSS
 - **Server-Side Rendering** - Fast initial page loads with Astro SSR on Vercel
 - **Animated Mobile Menu** - Smooth navigation experience on mobile devices
-- **Contact Form** - Server-side email handling via Resend API
+- **Contact Form** - Server-side email handling via Resend API with Cloudflare Turnstile spam protection
 - **About Page** - Team information and company background
 - **Project Showcase** - Highlighting our diverse portfolio including:
   - TezLab iOS & Android app
@@ -119,6 +120,18 @@ The following secrets must be configured in your GitHub repository settings:
 | `ORG_ID` | Vercel organization ID |
 | `PROJECT_ID` | Vercel project ID |
 | `VERCEL_RESEND_KEY` | Resend API key for contact form emails |
+
+### Environment Variables
+
+The following environment variables must be configured in Vercel:
+
+| Variable | Description |
+| :------- | :---------- |
+| `RESEND_KEY` | Resend API key for contact form emails |
+| `TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key (public) |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key (server-side verification) |
+
+To get Turnstile keys, create a widget at [Cloudflare Turnstile Dashboard](https://dash.cloudflare.com/?to=/:account/turnstile).
 
 ### Manual Deployment
 
