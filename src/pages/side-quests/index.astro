@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const quests = (await getCollection('side-quests')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Layout>
+	<div class="container mx-auto px-4 py-8 md:max-w-5xl">
+		<div class="max-w-4xl mx-auto">
+			<h1 class="text-3xl font-bold text-[var(--color-text-primary)] mb-8">Side Quests</h1>
+
+			<div class="grid gap-4 md:grid-cols-2">
+				{quests.map((quest) => (
+					<Card href={`/side-quests/${quest.id}`}>
+						<Fragment slot="title">{quest.data.title}</Fragment>
+						<Fragment slot="description">{quest.data.description}</Fragment>
+						<Fragment slot="link">Read More &rarr;</Fragment>
+					</Card>
+				))}
+			</div>
+
+			{quests.length === 0 && (
+				<p class="text-[var(--color-text-secondary)] text-lg">No side quests yet. Check back soon!</p>
+			)}
+		</div>
+	</div>
+</Layout>

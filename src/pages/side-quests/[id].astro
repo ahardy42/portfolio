@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { getCollection, render } from 'astro:content'
+
+const { id } = Astro.params
+const quests = await getCollection('side-quests')
+const quest = quests.find(q => q.id === id)
+
+if (!quest) {
+	return Astro.redirect('/side-quests')
+}
+
+const { Content } = await render(quest)
+
+const statusLabel: Record<string, string> = {
+	'in-progress': 'In Progress',
+	completed: 'Completed',
+	'on-hold': 'On Hold',
+}
+---
+
+<Layout>
+	<article class='container mx-auto px-4 py-8 md:max-w-3xl'>
+		<a
+			href='/side-quests'
+			class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full mb-8 block"
+		>
+			&larr; All Side Quests
+		</a>
+
+		<header class='mb-8'>
+			<h1
+				class='text-3xl font-bold text-[var(--color-text-primary)] mb-4'
+			>
+				{quest.data.title}
+			</h1>
+			<div
+				class='flex flex-wrap items-center gap-3 text-sm text-[var(--color-text-secondary)]'
+			>
+				<time datetime={quest.data.date.toISOString()}>
+					{
+						quest.data.date.toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric',
+						})
+					}
+				</time>
+				<span
+					class='bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full'
+				>
+					{statusLabel[quest.data.status]}
+				</span>
+			</div>
+			{
+				quest.data.tags.length > 0 && (
+					<div class='flex flex-wrap gap-2 mt-4'>
+						{quest.data.tags.map((tag: string) => (
+							<span class='bg-[var(--color-surface)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm'>
+								{tag}
+							</span>
+						))}
+					</div>
+				)
+			}
+		</header>
+
+		<div
+			class='prose prose-lg max-w-none
+			[&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-[var(--color-text-primary)] [&>h2]:mt-8 [&>h2]:mb-4
+			[&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-[var(--color-text-primary)] [&>h3]:mt-6 [&>h3]:mb-3
+			[&>p]:text-[var(--color-text-primary)] [&>p]:leading-relaxed [&>p]:mb-4
+			[&>ul]:text-[var(--color-text-primary)] [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-6
+			[&>ol]:text-[var(--color-text-primary)] [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-6
+			[&>li]:mb-2
+			[&>blockquote]:border-l-4 [&>blockquote]:border-[var(--color-primary)] [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:text-[var(--color-text-secondary)]
+			[&>pre]:bg-[var(--color-surface)] [&>pre]:rounded-lg [&>pre]:p-4 [&>pre]:overflow-x-auto [&>pre]:mb-4
+			[&>code]:bg-[var(--color-surface)] [&>code]:rounded [&>code]:px-1.5 [&>code]:py-0.5 [&>code]:text-sm
+			[&>a]:text-[var(--color-text-secondary)] [&>a]:underline [&>a]:underline-offset-2'
+		>
+			<Content />
+		</div>
+		{
+			quest.data.link && (
+				<a
+					href={quest.data.link}
+					class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full"
+				>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						viewBox='0 0 24 24'
+						fill='currentColor'
+						class='inline-block w-5 h-5 mr-1 align-text-bottom'
+						aria-hidden='true'
+						focusable='false'
+					>
+						<path
+							fill-rule='evenodd'
+							clip-rule='evenodd'
+							d='M12 2C6.477 2 2 6.484 2 12.021c0 4.426 2.865 8.179 6.839 9.504.5.092.682-.217.682-.483 0-.238-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.465-1.11-1.465-.907-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.34-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.688-.103-.254-.446-1.273.098-2.655 0 0 .84-.27 2.75 1.025A9.563 9.563 0 0 1 12 6.844a9.6 9.6 0 0 1 2.504.337c1.909-1.296 2.748-1.025 2.748-1.025.546 1.382.202 2.401.099 2.655.64.701 1.028 1.595 1.028 2.688 0 3.847-2.338 4.696-4.566 4.945.36.31.68.924.68 1.863 0 1.345-.012 2.43-.012 2.76 0 .268.18.58.688.482C19.138 20.197 22 16.445 22 12.021 22 6.484 17.523 2 12 2z'
+						/>
+					</svg>
+					{quest.data.linkText || 'View on GitHub'}
+				</a>
+			)
+		}
+	</article>
+</Layout>

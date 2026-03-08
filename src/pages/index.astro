@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const latestQuests = (await getCollection('side-quests'))
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.slice(0, 3);
 ---
 
 <Layout>
@@ -76,6 +81,23 @@ import Card from '../components/Card.astro';
 					</Card>
 				</div>
 			</div>
+
+			<!-- Side Quests Section -->
+			{latestQuests.length > 0 && (
+				<div class="mb-8">
+					<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">Side Quests</h2>
+					<div class="grid gap-4 md:grid-cols-2">
+						{latestQuests.map((quest) => (
+							<Card href={`/side-quests/${quest.id}`}>
+								<Fragment slot="title">{quest.data.title}</Fragment>
+								<Fragment slot="description">{quest.data.description}</Fragment>
+								<Fragment slot="link">Read More &rarr;</Fragment>
+							</Card>
+						))}
+					</div>
+					<a href="/side-quests" class="text-[var(--color-text-secondary)] text-sm font-bold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-text-secondary)] after:transition-all after:duration-300 hover:after:w-full focus:after:w-full mt-4">All Side Quests &rarr;</a>
+				</div>
+			)}
 
 			<!-- Skills Section -->
 			<div class="mb-8">
