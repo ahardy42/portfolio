@@ -1,235 +1,281 @@
 ---
 // Header component with responsive navigation
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname
 ---
 
-<header class="bg-[var(--color-background)] border-b border-[var(--color-surface)]">
-  <nav class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 md:max-w-5xl">
-    <div class="flex justify-between items-center h-16">
-      <!-- Logo/Brand -->
-      <div class="flex-shrink-0">
-        <a href="/" class="text-[var(--color-text-primary)] text-xl font-bold hover:text-[var(--color-primary)] transition-colors">
-          Ultimate Question Coding
-        </a>
-      </div>
+<header
+	class='bg-[var(--color-background)] border-b border-[var(--color-surface)] sticky top-0 z-50'
+>
+	<nav class='max-w-full mx-auto px-4 sm:px-6 lg:px-8 md:max-w-5xl'>
+		<div class='flex justify-between items-center h-16'>
+			<!-- Logo/Brand -->
+			<div class='flex-shrink-0'>
+				<a
+					href='/'
+					class='text-[var(--color-text-primary)] text-xl font-bold hover:text-[var(--color-primary)] transition-colors'
+				>
+					Ultimate Question Coding
+				</a>
+			</div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-4">
-          <a 
-            href="/about" 
-            class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
-              currentPath === '/about' 
-                ? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full' 
-                : 'text-[var(--color-text-primary)] hover:after:w-full'
-            } after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-          >
-            About
-          </a>
-          <a 
-            href="/projects" 
-            class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
-              currentPath === '/projects' 
-                ? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full' 
-                : 'text-[var(--color-text-primary)] hover:after:w-full'
-            } after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-          >
-            Projects
-          </a>
-          <a 
-            href="/side-quests" 
-            class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
-              currentPath.startsWith('/side-quests') 
-                ? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full' 
-                : 'text-[var(--color-text-primary)] hover:after:w-full'
-            } after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-          >
-            Side Quests
-          </a>
-          <a 
-            href="/contact" 
-            class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
-              currentPath === '/contact' 
-                ? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full' 
-                : 'text-[var(--color-text-primary)] hover:after:w-full'
-            } after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-          >
-            Contact
-          </a>
-        </div>
-      </div>
+			<!-- Desktop Navigation -->
+			<div class='hidden md:block'>
+				<div class='ml-10 flex items-baseline space-x-4'>
+					<a
+						href='/about'
+						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+							currentPath === '/about'
+								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
+								: 'text-[var(--color-text-primary)] hover:after:w-full'
+						} after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+					>
+						About
+					</a>
+					<a
+						href='/projects'
+						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+							currentPath === '/projects'
+								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
+								: 'text-[var(--color-text-primary)] hover:after:w-full'
+						} after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+					>
+						Projects
+					</a>
+					<a
+						href='/side-quests'
+						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+							currentPath.startsWith('/side-quests')
+								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
+								: 'text-[var(--color-text-primary)] hover:after:w-full'
+						} after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+					>
+						Side Quests
+					</a>
+					<a
+						href='/contact'
+						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+							currentPath === '/contact'
+								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
+								: 'text-[var(--color-text-primary)] hover:after:w-full'
+						} after:absolute after:bottom-0 after:left-0 after:h-0.25 after:bg-[var(--color-primary)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+					>
+						Contact
+					</a>
+				</div>
+			</div>
 
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
-        <button 
-          type="button" 
-          class="mobile-menu-button text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] p-2"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <!-- Hamburger icon -->
-          <svg class="hamburger-icon block h-6 w-6 transition-transform duration-300 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <!-- Close icon (hidden by default) -->
-          <svg class="close-icon hidden h-6 w-6 transition-transform duration-300 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
+			<!-- Mobile menu button -->
+			<div class='md:hidden'>
+				<button
+					type='button'
+					class='mobile-menu-button text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] p-2'
+					aria-controls='mobile-menu'
+					aria-expanded='false'
+				>
+					<span class='sr-only'>Open main menu</span>
+					<!-- Hamburger icon -->
+					<svg
+						class='hamburger-icon block h-6 w-6 transition-transform duration-300 ease-in-out'
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke='currentColor'
+						aria-hidden='true'
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='M4 6h16M4 12h16M4 18h16'></path>
+					</svg>
+					<!-- Close icon (hidden by default) -->
+					<svg
+						class='close-icon hidden h-6 w-6 transition-transform duration-300 ease-in-out'
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke='currentColor'
+						aria-hidden='true'
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							stroke-width='2'
+							d='M6 18L18 6M6 6l12 12'></path>
+					</svg>
+				</button>
+			</div>
+		</div>
 
-    <!-- Mobile Navigation Menu -->
-    <div class="md:hidden mobile-menu hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[var(--color-surface)]">
-        <a 
-          href="/about" 
-          class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
-            currentPath === '/about' 
-              ? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full' 
-              : 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
-          } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-        >
-          About
-        </a>
-        <a 
-          href="/projects" 
-          class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
-            currentPath === '/projects' 
-              ? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full' 
-              : 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
-          } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-        >
-          Projects
-        </a>
-        <a 
-          href="/side-quests" 
-          class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
-            currentPath.startsWith('/side-quests') 
-              ? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full' 
-              : 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
-          } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-        >
-          Side Quests
-        </a>
-        <a 
-          href="/contact" 
-          class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
-            currentPath === '/contact' 
-              ? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full' 
-              : 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
-          } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
-        >
-          Contact
-        </a>
-      </div>
-    </div>
-  </nav>
+		<!-- Mobile Navigation Menu -->
+		<div
+			class='md:hidden mobile-menu hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0'
+			id='mobile-menu'
+		>
+			<div
+				class='px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[var(--color-surface)]'
+			>
+				<a
+					href='/about'
+					class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
+						currentPath === '/about'
+							? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full'
+							: 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
+					} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+				>
+					About
+				</a>
+				<a
+					href='/projects'
+					class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
+						currentPath === '/projects'
+							? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full'
+							: 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
+					} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+				>
+					Projects
+				</a>
+				<a
+					href='/side-quests'
+					class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
+						currentPath.startsWith('/side-quests')
+							? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full'
+							: 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
+					} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+				>
+					Side Quests
+				</a>
+				<a
+					href='/contact'
+					class={`mobile-menu-item block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 relative group transform translate-x-[-100%] opacity-0 ${
+						currentPath === '/contact'
+							? 'text-[var(--color-text-primary)] border-2 border-[var(--color-accent)] hover:border-transparent hover:after:w-full'
+							: 'text-[var(--color-text-primary)] hover:text-[var(--color-text-secondary)] hover:after:w-full'
+					} after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[var(--color-accent)] after:w-0 after:transition-all after:duration-300 after:ease-out`}
+				>
+					Contact
+				</a>
+			</div>
+		</div>
+	</nav>
 </header>
 
 <script>
-  // Mobile menu toggle functionality with animations
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const hamburgerIcon = mobileMenuButton?.querySelector('.hamburger-icon');
-    const closeIcon = mobileMenuButton?.querySelector('.close-icon');
-    const menuItems = mobileMenu?.querySelectorAll('.mobile-menu-item');
+	// Mobile menu toggle functionality with animations
+	document.addEventListener('DOMContentLoaded', function () {
+		const mobileMenuButton = document.querySelector('.mobile-menu-button')
+		const mobileMenu = document.querySelector('.mobile-menu')
+		const hamburgerIcon = mobileMenuButton?.querySelector('.hamburger-icon')
+		const closeIcon = mobileMenuButton?.querySelector('.close-icon')
+		const menuItems = mobileMenu?.querySelectorAll('.mobile-menu-item')
 
-    function openMenu() {
-      if (!mobileMenu) return;
-      
-      // Remove hidden class and trigger slide-down animation
-      mobileMenu.classList.remove('hidden');
-      
-      // Force reflow to ensure the element is rendered before animation
-      (mobileMenu as HTMLElement).offsetHeight;
-      
-      // Add classes for height and opacity animation
-      mobileMenu.classList.remove('max-h-0', 'opacity-0');
-      mobileMenu.classList.add('max-h-96', 'opacity-100');
-      
-      // Animate menu items with staggered delay
-      if (menuItems) {
-        menuItems.forEach((item, index) => {
-          setTimeout(() => {
-            item.classList.remove('translate-x-[-100%]', 'opacity-0');
-            item.classList.add('translate-x-0', 'opacity-100');
-          }, index * 100); // 100ms delay between each item
-        });
-      }
-      
-      // Animate hamburger icon rotation
-      if (hamburgerIcon && closeIcon) {
-        hamburgerIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
-        closeIcon.classList.add('rotate-180');
-      }
-    }
+		function openMenu() {
+			if (!mobileMenu) return
 
-    function closeMenu() {
-      if (!mobileMenu) return;
-      
-      // Animate menu items out with reverse stagger
-      if (menuItems) {
-        menuItems.forEach((item, index) => {
-          setTimeout(() => {
-            item.classList.add('translate-x-[-100%]', 'opacity-0');
-            item.classList.remove('translate-x-0', 'opacity-100');
-          }, index * 50); // Faster exit animation
-        });
-      }
-      
-      // Collapse menu height and fade out
-      mobileMenu.classList.add('max-h-0', 'opacity-0');
-      mobileMenu.classList.remove('max-h-96', 'opacity-100');
-      
-      // Wait for animation to complete before hiding
-      setTimeout(() => {
-        mobileMenu.classList.add('hidden');
-      }, 300);
-      
-      // Animate hamburger icon back
-      if (hamburgerIcon && closeIcon) {
-        closeIcon.classList.remove('rotate-180');
-        closeIcon.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-      }
-    }
+			// Remove hidden class and trigger slide-down animation
+			mobileMenu.classList.remove('hidden')
 
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function() {
-        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-        
-        if (isExpanded) {
-          closeMenu();
-          mobileMenuButton.setAttribute('aria-expanded', 'false');
-        } else {
-          openMenu();
-          mobileMenuButton.setAttribute('aria-expanded', 'true');
-        }
-      });
+			// Force reflow to ensure the element is rendered before animation
+			;(mobileMenu as HTMLElement).offsetHeight
 
-      // Close menu when clicking outside
-      document.addEventListener('click', function(event) {
-        if (!mobileMenuButton?.contains(event.target as Node) && !mobileMenu?.contains(event.target as Node)) {
-          if (mobileMenuButton.getAttribute('aria-expanded') === 'true') {
-            closeMenu();
-            mobileMenuButton.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
+			// Add classes for height and opacity animation
+			mobileMenu.classList.remove('max-h-0', 'opacity-0')
+			mobileMenu.classList.add('max-h-96', 'opacity-100')
 
-      // Close menu on window resize to desktop size
-      window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) { // md breakpoint
-          if (mobileMenuButton.getAttribute('aria-expanded') === 'true') {
-            closeMenu();
-            mobileMenuButton.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
-    }
-  });
+			// Animate menu items with staggered delay
+			if (menuItems) {
+				menuItems.forEach((item, index) => {
+					setTimeout(() => {
+						item.classList.remove(
+							'translate-x-[-100%]',
+							'opacity-0',
+						)
+						item.classList.add('translate-x-0', 'opacity-100')
+					}, index * 100) // 100ms delay between each item
+				})
+			}
+
+			// Animate hamburger icon rotation
+			if (hamburgerIcon && closeIcon) {
+				hamburgerIcon.classList.add('hidden')
+				closeIcon.classList.remove('hidden')
+				closeIcon.classList.add('rotate-180')
+			}
+		}
+
+		function closeMenu() {
+			if (!mobileMenu) return
+
+			// Animate menu items out with reverse stagger
+			if (menuItems) {
+				menuItems.forEach((item, index) => {
+					setTimeout(() => {
+						item.classList.add('translate-x-[-100%]', 'opacity-0')
+						item.classList.remove('translate-x-0', 'opacity-100')
+					}, index * 50) // Faster exit animation
+				})
+			}
+
+			// Collapse menu height and fade out
+			mobileMenu.classList.add('max-h-0', 'opacity-0')
+			mobileMenu.classList.remove('max-h-96', 'opacity-100')
+
+			// Wait for animation to complete before hiding
+			setTimeout(() => {
+				mobileMenu.classList.add('hidden')
+			}, 300)
+
+			// Animate hamburger icon back
+			if (hamburgerIcon && closeIcon) {
+				closeIcon.classList.remove('rotate-180')
+				closeIcon.classList.add('hidden')
+				hamburgerIcon.classList.remove('hidden')
+			}
+		}
+
+		if (mobileMenuButton && mobileMenu) {
+			mobileMenuButton.addEventListener('click', function () {
+				const isExpanded =
+					mobileMenuButton.getAttribute('aria-expanded') === 'true'
+
+				if (isExpanded) {
+					closeMenu()
+					mobileMenuButton.setAttribute('aria-expanded', 'false')
+				} else {
+					openMenu()
+					mobileMenuButton.setAttribute('aria-expanded', 'true')
+				}
+			})
+
+			// Close menu when clicking outside
+			document.addEventListener('click', function (event) {
+				if (
+					!mobileMenuButton?.contains(event.target as Node) &&
+					!mobileMenu?.contains(event.target as Node)
+				) {
+					if (
+						mobileMenuButton.getAttribute('aria-expanded') ===
+						'true'
+					) {
+						closeMenu()
+						mobileMenuButton.setAttribute('aria-expanded', 'false')
+					}
+				}
+			})
+
+			// Close menu on window resize to desktop size
+			window.addEventListener('resize', function () {
+				if (window.innerWidth >= 768) {
+					// md breakpoint
+					if (
+						mobileMenuButton.getAttribute('aria-expanded') ===
+						'true'
+					) {
+						closeMenu()
+						mobileMenuButton.setAttribute('aria-expanded', 'false')
+					}
+				}
+			})
+		}
+	})
 </script>
