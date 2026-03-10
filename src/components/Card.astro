@@ -1,14 +1,17 @@
 ---
-const { href, onclick } = Astro.props;
+const { href, onclick, deprecated } = Astro.props;
 const isLink = href !== undefined;
 const isButton = onclick !== undefined;
 ---
 
 {isLink ? (
     <a href={href} class="block bg-[var(--color-surface)] rounded-lg p-4 hover:bg-[var(--color-base)] focus:bg-[var(--color-base)] hover:outline hover:outline-2 hover:outline-[var(--color-surface)] focus:outline focus:outline-2 focus:outline-[var(--color-surface)] transition-all duration-300 focus:outline-offset-2">
-        <h2 class="text-[var(--color-text-primary)] text-xl font-bold mb-2">
-            <slot name="title" />
-        </h2>
+        <div class="flex items-center gap-2 mb-2">
+            <h2 class="text-[var(--color-text-primary)] text-xl font-bold">
+                <slot name="title" />
+            </h2>
+            {deprecated && <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 shrink-0">Deprecated</span>}
+        </div>
         <p class="text-[var(--color-text-primary)]">
             <slot name="description" />
         </p>
@@ -18,9 +21,12 @@ const isButton = onclick !== undefined;
     </a>
 ) : isButton ? (
     <button onclick={onclick} class="w-full text-left bg-[var(--color-surface)] rounded-lg p-4 hover:bg-[var(--color-base)] focus:bg-[var(--color-base)] hover:outline hover:outline-2 hover:outline-[var(--color-surface)] focus:outline focus:outline-2 focus:outline-[var(--color-surface)] transition-all duration-300 focus:outline-offset-2">
-        <h2 class="text-[var(--color-text-primary)] text-xl font-bold mb-2">
-            <slot name="title" />
-        </h2>
+        <div class="flex items-center gap-2 mb-2">
+            <h2 class="text-[var(--color-text-primary)] text-xl font-bold">
+                <slot name="title" />
+            </h2>
+            {deprecated && <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 shrink-0">Deprecated</span>}
+        </div>
         <p class="text-[var(--color-text-primary)]">
             <slot name="description" />
         </p>
@@ -30,9 +36,12 @@ const isButton = onclick !== undefined;
     </button>
 ) : (
     <div class="bg-[var(--color-surface)] rounded-lg p-4">
-        <h2 class="text-[var(--color-text-primary)] text-xl font-bold mb-2">
-            <slot name="title" />
-        </h2>
+        <div class="flex items-center gap-2 mb-2">
+            <h2 class="text-[var(--color-text-primary)] text-xl font-bold">
+                <slot name="title" />
+            </h2>
+            {deprecated && <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 shrink-0">Deprecated</span>}
+        </div>
         <p class="text-[var(--color-text-primary)]">
             <slot name="description" />
         </p>
