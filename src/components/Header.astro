@@ -23,7 +23,7 @@ const currentPath = Astro.url.pathname
 				<div class='ml-10 flex items-baseline space-x-4'>
 					<a
 						href='/about'
-						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+						class={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
 							currentPath === '/about'
 								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
 								: 'text-[var(--color-text-primary)] hover:after:w-full'
@@ -33,7 +33,7 @@ const currentPath = Astro.url.pathname
 					</a>
 					<a
 						href='/projects'
-						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+						class={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
 							currentPath === '/projects'
 								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
 								: 'text-[var(--color-text-primary)] hover:after:w-full'
@@ -43,7 +43,7 @@ const currentPath = Astro.url.pathname
 					</a>
 					<a
 						href='/side-quests'
-						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+						class={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
 							currentPath.startsWith('/side-quests')
 								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
 								: 'text-[var(--color-text-primary)] hover:after:w-full'
@@ -53,7 +53,7 @@ const currentPath = Astro.url.pathname
 					</a>
 					<a
 						href='/contact'
-						class={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+						class={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
 							currentPath === '/contact'
 								? 'text-[var(--color-text-primary)] border-1 border-[var(--color-primary)] hover:border-transparent hover:after:w-full'
 								: 'text-[var(--color-text-primary)] hover:after:w-full'

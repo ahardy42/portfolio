@@ -12,7 +12,7 @@ const latestQuests = (await getCollection('side-quests'))
 	<div class="container mx-auto px-4 py-8 md:max-w-5xl">
 		<div class="max-w-4xl mx-auto">
 			<!-- Company Blurb -->
-			<div class="mb-12">
+			<div class="mb-16">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">What I do</h2>
 				<p class="text-lg text-[var(--color-text-primary)] leading-relaxed mb-4">
 					Ultimate Question Coding LLC is a software development house based out of Waterbury VT that specializes in custom app development for clients. Started in 2019 by Andy Hardy, we have extensive experience creating web-apps, static sites, cross-platform apps and smart TV applications.
@@ -21,7 +21,7 @@ const latestQuests = (await getCollection('side-quests'))
 			</div>
 
 			<!-- Project Cards Section -->
-			<div class="mb-8">
+			<div class="mb-16">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">Out in the wild</h2>
 				<div class="grid gap-4 md:grid-cols-2">
 					<Card href="/projects#tezlab-app">
@@ -84,7 +84,7 @@ const latestQuests = (await getCollection('side-quests'))
 
 			<!-- Side Quests Section -->
 			{latestQuests.length > 0 && (
-				<div class="mb-8">
+				<div class="mb-16">
 					<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">Side Quests</h2>
 					<div class="grid gap-4 md:grid-cols-2">
 						{latestQuests.map((quest) => (
@@ -100,9 +100,9 @@ const latestQuests = (await getCollection('side-quests'))
 			)}
 
 			<!-- Skills Section -->
-			<div class="mb-8">
+			<div class="mb-16">
 				<h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-6">Skills</h2>
-				<div class="grid gap-6 md:grid-cols-2">
+				<div class="grid gap-4 md:grid-cols-3">
 					<Card>
 						<Fragment slot="title">Front-end</Fragment>
 						<Fragment slot="description">

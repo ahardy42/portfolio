@@ -10,13 +10,16 @@ import tezlab_ai from '../assets/tezlab_ai.webp';
 
 <Layout>
 	<div class="container mx-auto px-4 py-8 md:max-w-5xl">
-		<div class="mx-auto">
-			<h1 class="text-3xl font-bold text-[var(--color-text-primary)] mb-8">Our Projects</h1>
-			
+		<div class="max-w-4xl mx-auto">
+			<h1 class="text-3xl font-bold text-[var(--color-text-primary)] mb-4">Our Projects</h1>
+			<p class="text-lg text-[var(--color-text-primary)] leading-relaxed mb-16">
+				A selection of apps, websites and tools I've built for clients — spanning mobile, web, smart TV and AI.
+			</p>
+
 			<!-- TezLab App Section -->
-			<section id="tezlab-app" class="mb-12">
+			<section id="tezlab-app" class="mb-16">
 				<h2 class="text-2xl text-[var(--color-text-primary)] mb-4">TezLab App</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-6">
 					<div class="flex-1">
 						<p class="text-[var(--color-text-primary)] mb-4">
 							A cross-platform app that offers insights, social engagement and cost and energy tracking for supported electric vehicles. Built using React Native with a SwiftUI built widget.
@@ -37,10 +40,10 @@ import tezlab_ai from '../assets/tezlab_ai.webp';
 				</div>
 			</section>
 
-			<!-- TezLab Website Section -->
-			<section id="tezlab-website" class="mb-12">
+			<!-- TezLab Website Section (image left) -->
+			<section id="tezlab-website" class="mb-16">
 				<h2 class="text-2xl text-[var(--color-text-primary)] mb-4">TezLab Website</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row-reverse flex-col gap-6">
 					<div class="flex-1">
 						<p class="text-[var(--color-text-primary)] mb-4">
 							Built using a combination of Ruby on Rails and React, this is a responsive, modern marketing website as well as a public charger map which sources review data from the TezLab user base.
@@ -59,9 +62,9 @@ import tezlab_ai from '../assets/tezlab_ai.webp';
 			</section>
 
 			<!-- WatchMyRiv Section -->
-			<section id="watchmyriv" class="mb-12">
+			<section id="watchmyriv" class="mb-16">
 				<h2 class="text-2xl text-[var(--color-text-primary)] mb-4 flex items-center gap-3">WatchMyRiv Marketing Website <span class="text-sm font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">Deprecated</span></h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-6">
 					<div class="flex-1">
 						<p class="text-[var(--color-text-primary)] mb-4">
 							This is a static site built using Astro that advertises an iOS watch app for controlling various functionalities of your Rivian vehicle.
@@ -78,10 +81,10 @@ import tezlab_ai from '../assets/tezlab_ai.webp';
 				</div>
 			</section>
 
-			<!-- Perplexity Section -->
-			<section id="perplexity" class="mb-12">
+			<!-- Perplexity Section (image left) -->
+			<section id="perplexity" class="mb-16">
 				<h2 class="text-2xl text-[var(--color-text-primary)] mb-4">Perplexity</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row-reverse flex-col gap-6">
 					<div class="flex-1">
 						<p class="text-[var(--color-text-primary)] mb-4">
 							This is a Samsung smart TV app built using Tizen / Svelte which integrates the system microphone into a voice-to-text search using Perplexity's LLM to search the web from the comfort of your living room.
@@ -101,15 +104,15 @@ import tezlab_ai from '../assets/tezlab_ai.webp';
 			</section>
 
 			<!-- Perplexity-Server Section -->
-			<section id="perplexity-server" class="mb-12">
+			<section id="perplexity-server" class="mb-16">
 				<h2 class="text-2xl text-[var(--color-text-primary)] mb-4">Perplexity Server</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
-					<div class="flex-1">
+				<div class="bg-[var(--color-surface)] rounded-lg p-6">
+					<div>
 						<p class="text-[var(--color-text-primary)] mb-4">
 							This is a CMS built Ruby on Rails and PostgreSQL that allows the Perplexity team to monitor and manage their localized content for the Perplexity Smart TV app.
 							The app is deployed using fly.io which allows for easy scaling and deployment. The database is hosted on Supabase.
 						</p>
-						<div class="flex flex-wrap gap-2 mb-4">
+						<div class="flex flex-wrap gap-2">
 							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Ruby on Rails</span>
 							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">PostgreSQL</span>
 							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">CMS</span>
@@ -118,16 +121,16 @@ import tezlab_ai from '../assets/tezlab_ai.webp';
 				</div>
 			</section>
 
-			<!-- Echelon TV Section -->
-			<section id="echelon-tv" class="mb-12">
+			<!-- Echelon TV Section (image left, if it had one) -->
+			<section id="echelon-tv" class="mb-16">
 				<h2 class="text-2xl text-[var(--color-text-primary)] mb-4">Echelon TV</h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
-					<div class="flex-1">
+				<div class="bg-[var(--color-surface)] rounded-lg p-6">
+					<div>
 						<p class="text-[var(--color-text-primary)] mb-4">
 							This is a Samsung smart TV app built using Tizen / React which allows a user to workout on their echelon bike from the comfort of their living room.
 							The app was built using react and packaged using tizen cli.
 						</p>
-						<div class="flex flex-wrap gap-2 mb-4">
+						<div class="flex flex-wrap gap-2">
 							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Tizen</span>
 							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">React</span>
 							<span class="bg-[var(--color-base)] text-[var(--color-text-primary)] px-3 py-1 rounded-full text-sm">Smart TV</span>
@@ -137,9 +140,9 @@ import tezlab_ai from '../assets/tezlab_ai.webp';
 			</section>
 
 			<!-- TezLabAI Section -->
-			<section id="tezlab-ai" class="mb-12">
+			<section id="tezlab-ai" class="mb-16">
 				<h2 class="text-2xl text-[var(--color-text-primary)] mb-4 flex items-center gap-3">TezLabAI <span class="text-sm font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">Deprecated</span></h2>
-				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-4">
+				<div class="bg-[var(--color-surface)] rounded-lg p-6 flex md:flex-row flex-col gap-6">
 					<div class="flex-1">
 						<p class="text-[var(--color-text-primary)] mb-4">
 							This app incorporates a MCP client server using Next.js, and an express MCP server that exposes an API along with tools and resources to allow a TezLab user to ask questions about their vehicle using real data from their everyday driving and charging habits.
